@@ -8,12 +8,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_background">#FFBBBB</color>
+    <color name="pink_light">#FFBBBB</color>
     <color name="green">#7FE613</color>
     <color name="grey">#E1DFCECE</color>
     <color name="orange_light">#FFE4C0</color>
     <color name="orange_dark">#F4511E</color>
-    <color name="orange">#F4511E</color>
     <color name="green_light">#E7FBBE</color>
     <color name="green_dark">#2B7A0B</color>
     <color name="blue_light">#BFFFF0</color>

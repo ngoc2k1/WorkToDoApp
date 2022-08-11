@@ -10,43 +10,35 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bichngoc.worktodoapplication.databinding.ItemCongviecBinding;
+
 import java.util.ArrayList;
 
 public class CongViecAdapter extends RecyclerView.Adapter<CongViecAdapter.CongViecHolder> {
     private ArrayList<CongViec> listCongViec;
     private CongViec congViec;
-    private Context context;//moi truong để hiển thị
+    private Context context;
+    private IOnCongViecListener listener;
 
-    public CongViecAdapter(ArrayList<CongViec> listCongViec, Context context) {
+    public CongViecAdapter(ArrayList<CongViec> listCongViec, Context context, IOnCongViecListener listener) {
         this.listCongViec = listCongViec;
         this.context = context;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public CongViecAdapter.CongViecHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.viewholder_cong_viec, parent, false);
-        return new CongViecHolder(view);
+        ItemCongviecBinding itemBinding = ItemCongviecBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new CongViecHolder(itemBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CongViecAdapter.CongViecHolder holder, int position) {
         congViec = listCongViec.get(position);
         holder.tvTen.setText(congViec.getTenCV());
-        holder.imgDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                context = (MainActivity) context;
-                ((MainActivity) context).delete(congViec.getIdCV(), congViec.getTenCV());
-            }
-        });
-        holder.imgEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                context = (MainActivity) context;
-                ((MainActivity) context).update(congViec);
-            }
-        });
+        holder.imgDelete.setOnClickListener(view -> listener.delete(congViec.getIdCV()));
+        holder.imgEdit.setOnClickListener(view -> listener.update(congViec));
     }
 
     public void updateData(ArrayList<CongViec> listCongViecUpdate) {
@@ -64,11 +56,11 @@ public class CongViecAdapter extends RecyclerView.Adapter<CongViecAdapter.CongVi
         private TextView tvTen;
         private ImageView imgDelete, imgEdit;
 
-        public CongViecHolder(@NonNull View itemView) {
-            super(itemView);
-            tvTen = itemView.findViewById(R.id.textview_ten);
-            imgDelete = itemView.findViewById(R.id.imageview_delete);
-            imgEdit = itemView.findViewById(R.id.imageview_edit);
+        public CongViecHolder(ItemCongviecBinding itemView) {
+            super(itemView.getRoot());
+            tvTen = itemView.textviewTen;
+            imgDelete = itemView.imageviewDelete;
+            imgEdit = itemView.imageviewEdit;
         }
     }
 }

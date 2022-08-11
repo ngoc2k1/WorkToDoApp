@@ -9,8 +9,9 @@
         android:id="@+id/textview_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cap nhat công việc"
+        android:text="Cập nhật công việc"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +29,7 @@
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="Lưu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edittext_tencv_edit" />
 
@@ -36,7 +37,7 @@
         android:id="@+id/button_huy_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Huy"
+        android:text="Hủy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edittext_tencv_edit" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/WorkToDoApplication/app/src/main/res/drawable/ic_bin.xml" value="0.1" />
-        <entry key="..\:/WorkToDoApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/WorkToDoApplication/app/src/main/res/layout/diaglog_suacv.xml" value="0.1" />
+        <entry key="..\:/WorkToDoApplication/app/src/main/res/drawable/ic_button_edit.xml" value="0.2305" />
+        <entry key="..\:/WorkToDoApplication/app/src/main/res/drawable/ic_plus.xml" value="0.1" />
+        <entry key="..\:/WorkToDoApplication/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/WorkToDoApplication/app/src/main/res/layout/diaglog_suacv.xml" value="0.264" />
         <entry key="..\:/WorkToDoApplication/app/src/main/res/layout/diaglog_themcv.xml" value="0.18425925925925926" />
+        <entry key="..\:/WorkToDoApplication/app/src/main/res/layout/item_congviec.xml" value="0.259375" />
         <entry key="..\:/WorkToDoApplication/app/src/main/res/layout/viewholder_cong_viec.xml" value="0.4" />
       </map>
     </option>

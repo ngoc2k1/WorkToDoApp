@@ -12,6 +12,8 @@ public class CongViecDAO {
     private SQLiteDatabase sqLiteDatabase;
 
     public CongViecDAO(Context context) {
+        //khi khởi tạo ở MainActivity. ta truyền context(tài nguyên của Main) vào db -> db được khởi tạo
+        // -> db cho phép sqlitedb có quyền thực hiện các truy cấn
         database = new Database(context);
         sqLiteDatabase = database.getWritableDatabase();
     }
@@ -24,7 +26,7 @@ public class CongViecDAO {
 
     public ArrayList<CongViec> select() {
         ArrayList<CongViec> listCongViec = new ArrayList<>();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from CongViec", null);//doc du lieu
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from CongViec", null);//con trỏ để lấy ra dl của bảng đó
         if (cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(0);
@@ -34,6 +36,7 @@ public class CongViecDAO {
             }
             while (cursor.moveToNext());
         }
+        cursor.close();
         return listCongViec;
     }
 
@@ -46,5 +49,4 @@ public class CongViecDAO {
         contentValues.put("TenCV", congViec.getTenCV());
         sqLiteDatabase.update("CongViec", contentValues, "Id = ?", new String[]{congViec.getIdCV() + ""});
     }
-
 }
